@@ -150,32 +150,39 @@ function boxIt (array) {
          let leftBar = '\n┃';
          let rightBar = '┃';
          let space = ' ';
-         let spaceCount = middleLength - string.length;
+
+         let spaceCount = maxLength - string.length;
          return leftBar + string + space.repeat(spaceCount) + rightBar;
      };
  
      if (array.length === 0 || array === undefined ) {
-        return drawTopBorder(middleLength) +  drawBottomBorder(middleLength);
+        return drawTopBorder(maxLength) +  drawBottomBorder(maxLength);
      };
  
      let numberOfString = array.length;
- 
+     var maxLength = 0;
      for (let i = 0 ; i < array.length ; i++) {
-        var middleLength = Math.max(array[i].length);
+         if (array[i].length > maxLength) {
+             maxLength = array[i].length
+         }
      };
+     
+    //  var maxLength = Math.max(...array.map((word) => word.length))
  
      let sentence = '';
+
      for (let j = 0 ; j < numberOfString ; j++) {
        let middleCount = (j == numberOfString - 1) ? 0: 1;
        let bottomCount = (j == numberOfString -1) ? 1: 0;
        let topCount = (j == 0) ? 1 : 0;
              
-         sentence += drawTopBorder(middleLength).repeat(topCount) + drawBarsAround(array[j]) + 
-         drawMiddleBorder(middleLength).repeat(middleCount) + drawBottomBorder(middleLength).repeat(bottomCount);
+         sentence += drawTopBorder(maxLength).repeat(topCount) + drawBarsAround(array[j]) + 
+         drawMiddleBorder(maxLength).repeat(middleCount) + drawBottomBorder(maxLength).repeat(bottomCount);
         };
     return sentence;
     
  };
+
  let words = process.argv.slice(2);
  console.log(boxIt(words));
 
