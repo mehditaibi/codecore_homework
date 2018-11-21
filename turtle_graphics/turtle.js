@@ -4,6 +4,7 @@ class Turtle {
         this.x = x;
         this.y = y;
         this.coordinates = [];
+        this.coordinates.push([this.x, this.y]);
         this.orientation = 'East';
     };
 
