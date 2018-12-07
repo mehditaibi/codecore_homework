@@ -1,0 +1,41 @@
+<%- include("../partials/header") %>
+<div style="margin: 0px 20px 20px 20px;">
+<h1>Edit Cohort</h1>
+
+<form action="/cohorts/<%= cohort.id %>" method="POST">
+  <input type="hidden" name="_method" value="PATCH">
+
+  <div class="form-group">
+    <input
+      type="text"
+      class="form-control"
+      name="name"
+      placeholder="Change name?"
+      value="<%= cohort.name %>">
+  </div>
+
+  <div class="form-group">
+    <input
+      type="text"
+      class="form-control"
+      name="imageUrl"
+      placeholder="e.g. http://imgur.com/myPic.jpg"
+      value="<%= cohort.imageUrl %>"
+    >
+  </div>
+
+  <div class="form-group">
+    <textarea
+      class="form-control"
+      name="members"
+      cols="60"
+      rows="5"
+      placeholder="Who's in, who's out?"
+    ><%= cohort.members %></textarea>
+  </div>
+
+  <input type="submit" value="Submit" class="btn btn-outline-primary">
+</form>
+</div>
+
+<%- include("../partials/footer") %>

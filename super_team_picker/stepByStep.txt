@@ -1,0 +1,14 @@
+1 - Create Express App
+
+    1) npm init 
+    2) npm i -D nodemon 
+    3) npm i express ejs morgan
+    4) npm i express
+    5) npm run db:create
+    6) npm i knex pg
+    7) knex init
+    8) setup knexfile.js
+    9) knex migrate:make <TableName>
+    10) create table and it's columns 
+    11) npm run db:migrate
+
