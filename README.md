@@ -8,3 +8,6 @@ Please see my homework in the `turle_graphics` folder/ branch
 
 ## Todo CLI Week - 3
 Please see my homework in the `todo_cli` folder/ branch
+
+## Super Team Picker - 4
+Please see my homework in the `super_team_picker` folder/ branch
