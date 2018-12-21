@@ -114,10 +114,10 @@ class Turtle {
                 let newLineNeeded = map[mapPointIndex][1] !== currentRow;
 
                 if (newLineNeeded) {
-                mapAsString += turtleSteppedHere ? "\n•": "\n ";
-                currentRow += 1;
+                    mapAsString += turtleSteppedHere ? "\n•": "\n ";
+                    currentRow += 1;
                 } else {
-                mapAsString += turtleSteppedHere ? "•" : " ";
+                    mapAsString += turtleSteppedHere ? "•" : " ";
                 };
             };
             console.log(mapAsString);
