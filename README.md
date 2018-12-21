@@ -1,4 +1,4 @@
-# Homework Assignment for the November 2018 Bootcamp
+# Homework Assignments for the November 2018 Bootcamp
 
 ## Box It Script - Week 1
 Please see my homework in the `box_it_script` folder
