@@ -11,3 +11,9 @@ Please see my homework in the `todo_cli` folder
 
 ## Super Team Picker - Week 4
 Please see my homework in the `super_team_picker` folder/ branch
+
+## Blog On Rails - Week 5/7
+Please see my homework in the `blog_on_rails` folder/ branch
+
+
+
