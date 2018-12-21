@@ -38,7 +38,7 @@ function handleUserAnswer(answer) {
         if (listOfTasks[0] == undefined) {
             console.log(`Todo list is empty..`)
         } else {
-            const checkBox = '[ ]',
+            const uncheckedBox = '[ ]',
                 checkedBox = '[✓]';
 
             for (let index = 0; index < listOfTasks.length; index++) {
@@ -49,7 +49,7 @@ function handleUserAnswer(answer) {
                 if (isItDone == true) {
                     string += `${index} ${checkedBox} ${eachTask}\n`;
                 } else {
-                    string += `${index} ${checkBox} ${eachTask}\n`;
+                    string += `${index} ${uncheckedBox} ${eachTask}\n`;
                 }
             }
             console.log(string);
@@ -63,9 +63,12 @@ function handleUserAnswer(answer) {
     };
 
     function completedTask(answer) {
+        if (typeof answer[1] != 'number') {
+            console.log("Please pick the index of the todo list item you wish to mark as completed..")
+            return rl.question(`${welcomeMessage}`, handleUserAnswer);
+        } 
         if (listOfTasks[0] == undefined) {
             console.log("Todo list is empty..");
-
         } else {
             let index = answer.slice(1);
             let eachTask = listOfTasks[index];
@@ -79,6 +82,10 @@ function handleUserAnswer(answer) {
     };
 
     function deleteTask(answer) {
+        if (typeof answer[1] != 'number') {
+            console.log("Please pick the index of the todo list item you wish to delete..")
+            return rl.question(`${welcomeMessage}`, handleUserAnswer);
+        } 
         if (listOfTasks[0] == undefined) {
             console.log("Todo list is empty..");
             rl.question(`${welcomeMessage}`, handleUserAnswer);
