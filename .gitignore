@@ -209,3 +209,5 @@ $RECYCLE.BIN/
 *.lnk
 
 # End of https://www.gitignore.io/api/node,linux,rails,macos,windows
+
+blog_on_rails/
