@@ -1,0 +1,48 @@
+.letters-container {
+    display: flex;
+    flex-wrap: wrap;    
+}
+
+.letter {
+    border: 2px solid black;
+    border-radius: 1vh;
+    margin: 4px;
+    padding: 4px;
+    width: 60px;
+    height: 60px;
+    text-align: center;
+    font-family: "Comic sans ms";
+    font-size: 40px;
+}
+
+.mistery-word-container {
+    width: 100vw;
+    display: flex; 
+    margin-top: 3vh;
+}
+.mistery-word-box {
+    border-bottom: 1px solid black;
+    width: 60px;
+    height: 60px;
+    margin: auto;
+    font-size: 40px;
+    text-align: center;
+}
+
+.selected {
+    background-color: black;
+    color: white;
+}
+
+.clue{
+    font-size: 40px;
+    margin: 10px;
+}
+
+.gallows-box {
+    display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
+
