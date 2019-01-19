@@ -16,14 +16,3 @@ Please see my homework in the `super_team_picker` folder/ branch
 Please see my homework in the `blog_on_rails` folder/ branch
 
 
-## Box It Script - Week 1
-Please see my homework in the `box_it_script` folder/ branch
-
-## Turle Graphics - Week 2
-Please see my homework in the `turle_graphics` folder/ branch
-
-## Todo CLI Week - Week 3
-Please see my homework in the `todo_cli` folder/ branch
-
-## Super Team Picker - Week 4
-Please see my homework in the `super_team_picker` folder/ branch
