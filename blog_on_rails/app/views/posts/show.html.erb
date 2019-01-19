@@ -1,0 +1,54 @@
+<div class="container-fluid mt-3 ">
+    <h3 class="font-weight-bold"><%= @post.title%></h3>
+    <p><%= @post.body%></p>
+</div>
+<div class="container-fluid mb-3">
+    <small>
+        Posted <%= time_ago_in_words(@post.created_at)%> ago
+    </small> 
+    •
+    <small>
+        From <%= @post.user.name%>
+    </small>
+</div>
+<%if can?(:crud, @post)%>
+<div class="container-fluid">
+  <small>
+      <%= link_to("Edit", "/posts/#{@post.id}/edit", class:"btn btn-outline-primary") %>
+
+      <%= link_to("Delete", "/posts/#{@post.id}", method: :delete, data: { confirm: "Are you sure?"}, class:"btn btn-outline-primary") %>
+  </small>
+</div>
+<% end %>
+<% if user_signed_in? %>
+<div class="container-fluid mt-3">
+    <%= form_with(model: [@post, @comment], local: true) do |form|%>
+    <div class="mb-3">
+    <%= form.text_area( :body, cols: 50, rows: 5, placeholder: "What are your thoughts?", class:"form-control" ) %>
+    </div>
+    <%= form.submit "Submit", class:"btn btn-outline-primary mt-3;"%>
+    <% end %>
+</div>
+<% end %>
+<div class="container-fluid mt-3">
+<% @comments.each do |comment|%>
+    <div  class="mt-2 mb-3">
+        <div>
+            <%= comment.body%> 
+        </div>
+        <small>
+            Commented <%= time_ago_in_words(comment.created_at)%> ago
+        </small>
+        •
+        <small>
+            From <%= comment.user.name%> 
+        </small>
+        <%if can?(:delete, comment)%>
+        •
+        <small>
+            <%= link_to("Delete", "/comments/#{comment.id}", method: :delete, data: { confirm: "Are you sure?"}) %>
+        </small>
+        <% end %>
+    </div>
+<% end %>
+</div>
